@@ -1,12 +1,12 @@
 #!/bin/bash
 ns_domain_cloudflare() {
-	DOMAIN="slowftp.me"
+	DOMAIN="ftpdns.web.id"
 	DOMAIN_PATH=$(cat /etc/xray/domain)
-	SUB=$(tr </dev/urandom -dc a-z0-9 | head -c7)
-	SUB_DOMAIN=${SUB}".slowftp.me"
+	SUB=sld$(tr </dev/urandom -dc a-z0-9 | head -c4)
+	SUB_DOMAIN=${SUB}".ftpdns.web.id"
 	NS_DOMAIN=ns.${SUB_DOMAIN}
-	CF_ID=pribadi.no99@gmail.com
-        CF_KEY=d5277e42edb887377f1ade26354d9fac8c82b
+	CF_ID=funtube.no99@gmail.com
+        CF_KEY=5ad69c81da181f59fd018f350485df3957608
 	set -euo pipefail
 	IP=$(wget -qO- ipinfo.io/ip)
 	echo "Updating DNS NS for ${NS_DOMAIN}..."
